@@ -1,0 +1,35 @@
+{
+  "name": "babel-preset-wix",
+  "version": "1.0.0",
+  "description": "Shared babel config for all Wix projects",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "mocha --reporter mocha-env-reporter",
+    "posttest": "eslint .",
+    "release": "wnpm-release --no-shrinkwrap"
+  },
+  "author": "Shahar Talmi",
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "wix/esnext"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.8.0",
+    "eslint-config-wix": "^1.1.16",
+    "mocha": "^4.0.1",
+    "mocha-env-reporter": "^3.0.0",
+    "wnpm-ci": "^6.2.52"
+  }
+}
