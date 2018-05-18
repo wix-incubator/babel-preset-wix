@@ -1,7 +1,7 @@
 const path = require('path');
 const env = process.env.BABEL_ENV || process.env.NODE_ENV;
 const basePresets = ['react', 'stage-2'];
-const basePlugins = ['syntax-dynamic-import'];
+const basePlugins = ['transform-decorators-legacy', 'syntax-dynamic-import'];
 const testPlugins = env === 'test' ? ['transform-dynamic-import'] : [];
 const modules = require(path.resolve('package.json')).module ? false : 'commonjs';
 const envPreset = env === 'test' ? ['env', {targets: {node: 'current'}, modules}] : ['env', {modules}];
