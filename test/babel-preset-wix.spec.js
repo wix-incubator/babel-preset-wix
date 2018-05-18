@@ -13,7 +13,7 @@ describe('babel-preset-wix', () => {
     process.env.NODE_ENV = 'development';
     expect(require('../index')).to.eql({
       presets: [['env', {modules: 'commonjs'}], 'react', 'stage-2'],
-      plugins: ['syntax-dynamic-import']
+      plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
     });
   });
 
@@ -21,7 +21,7 @@ describe('babel-preset-wix', () => {
     process.env.NODE_ENV = 'production';
     expect(require('../index')).to.eql({
       presets: [['env', {modules: 'commonjs'}], 'react', 'stage-2'],
-      plugins: ['syntax-dynamic-import']
+      plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
     });
   });
 
@@ -29,7 +29,7 @@ describe('babel-preset-wix', () => {
     process.env.NODE_ENV = 'test';
     expect(require('../index')).to.eql({
       presets: [['env', {targets: {node: 'current'}, modules: 'commonjs'}], 'react', 'stage-2'],
-      plugins: ['syntax-dynamic-import', 'transform-dynamic-import']
+      plugins: ['transform-decorators-legacy', 'syntax-dynamic-import', 'transform-dynamic-import']
     });
   });
 
@@ -38,7 +38,7 @@ describe('babel-preset-wix', () => {
     process.env.BABEL_ENV = 'development';
     expect(require('../index')).to.eql({
       presets: [['env', {modules: 'commonjs'}], 'react', 'stage-2'],
-      plugins: ['syntax-dynamic-import']
+      plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
     });
   });
 
@@ -47,7 +47,7 @@ describe('babel-preset-wix', () => {
     process.chdir(path.join(__dirname, 'es-modules-test-dir'));
     expect(require('../index')).to.eql({
       presets: [['env', {modules: false}], 'react', 'stage-2'],
-      plugins: ['syntax-dynamic-import']
+      plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
     });
   });
 });
