@@ -44,7 +44,16 @@ describe('babel-preset-wix', () => {
 
   it('should not transpile imports in case package declares module', () => {
     process.env.NODE_ENV = 'production';
-    process.chdir(path.join(__dirname, 'es-modules-test-dir'));
+    process.chdir(path.join(__dirname, 'with-module'));
+    expect(require('../index')).to.eql({
+      presets: [['env', {modules: false}], 'react', 'stage-2'],
+      plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
+    });
+  });
+
+  it('should not transpile imports in case package declares module', () => {
+    process.env.NODE_ENV = 'production';
+    process.chdir(path.join(__dirname, 'no-main'));
     expect(require('../index')).to.eql({
       presets: [['env', {modules: false}], 'react', 'stage-2'],
       plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
