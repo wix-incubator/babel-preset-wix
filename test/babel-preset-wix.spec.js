@@ -51,7 +51,7 @@ describe('babel-preset-wix', () => {
     });
   });
 
-  it('should not transpile imports in case package declares module', () => {
+  it.skip('should not transpile imports in case package declares module', () => {
     process.env.NODE_ENV = 'production';
     process.chdir(path.join(__dirname, 'no-main'));
     expect(require('../index')).to.eql({
