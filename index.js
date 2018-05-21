@@ -4,7 +4,7 @@ const basePresets = ['react', 'stage-2'];
 const basePlugins = ['transform-decorators-legacy', 'syntax-dynamic-import'];
 const testPlugins = env === 'test' ? ['transform-dynamic-import'] : [];
 const pkg = require(path.resolve('package.json'));
-const modules = /*pkg.main && */!pkg.module ? 'commonjs' : false;
+const modules = process.env.IN_WEBPACK === 'true' || pkg.module ? false : 'commonjs';
 const envPreset = env === 'test' ? ['env', {targets: {node: 'current'}, modules}] : ['env', {modules}];
 const presets = [envPreset].concat(basePresets);
 const plugins = basePlugins.concat(testPlugins);

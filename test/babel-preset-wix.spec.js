@@ -5,6 +5,9 @@ describe('babel-preset-wix', () => {
   let pwd;
   beforeEach(() => pwd = process.cwd());
   afterEach(() => {
+    delete process.env.NODE_ENV;
+    delete process.env.BABEL_ENV;
+    delete process.env.IN_WEBPACK;
     delete require.cache[require.resolve('../index')];
     process.chdir(pwd);
   });
@@ -51,9 +54,9 @@ describe('babel-preset-wix', () => {
     });
   });
 
-  it.skip('should not transpile imports in case package declares module', () => {
+  it('should not transpile imports in case package declares module', () => {
     process.env.NODE_ENV = 'production';
-    process.chdir(path.join(__dirname, 'no-main'));
+    process.env.IN_WEBPACK = 'true';
     expect(require('../index')).to.eql({
       presets: [['env', {modules: false}], 'react', 'stage-2'],
       plugins: ['transform-decorators-legacy', 'syntax-dynamic-import']
