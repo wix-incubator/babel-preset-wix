@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-wix",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Shared babel config for all Wix projects",
   "homepage": "https://github.com/wix/babel-preset-wix",
   "main": "index.js",
