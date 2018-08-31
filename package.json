@@ -2,6 +2,7 @@
   "name": "babel-preset-wix",
   "version": "2.0.0",
   "description": "Shared babel config for all Wix projects",
+  "homepage": "https://github.com/wix/babel-preset-wix",
   "main": "index.js",
   "files": [
     "index.js",
@@ -14,6 +15,10 @@
   },
   "author": "Shahar Talmi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/wix/babel-preset-wix.git"
+  },
   "eslintConfig": {
     "extends": "wix/esnext"
   },
