@@ -39,6 +39,6 @@
     "eslint-config-wix": "^1.1.16",
     "mocha": "^4.0.1",
     "mocha-env-reporter": "^3.0.0",
-    "wnpm-ci": "^6.2.52"
+    "wnpm-ci": "^7.0.1"
   }
 }
