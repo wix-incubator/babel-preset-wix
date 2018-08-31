@@ -4,7 +4,8 @@
   "description": "Shared babel config for all Wix projects",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "loose.js"
   ],
   "scripts": {
     "test": "mocha --reporter mocha-env-reporter",
